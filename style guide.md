@@ -70,6 +70,10 @@ All console output must be routed through the `Logger` class provided by the `Fl
 
 -   **Namespaces**: All engine code must reside within the `flicker` namespace. Do not use `using namespace` in header files.
 -   **Enums**: Use `enum class` instead of `enum`.
+-   **Concepts**: Use concepts to constrain all template parameters. This is mandatory for improving compile-time error messages and clarifying template API contracts.
+-   **Coroutines**: Use C++20 coroutines for asynchronous tasks like file I/O, network requests, or complex, time-sliced AI behaviors to avoid callback-heavy or complex state machine implementations.
+-   **`if consteval`**: Use `if consteval` to branch logic between compile-time and runtime execution contexts, enabling more powerful metaprogramming and optimization.
+-   **`flat_map` / `flat_set`**: For performance-critical code requiring associative containers, prefer `std::flat_map` and `std::flat_set` (C++23) over their node-based counterparts to improve cache locality and iteration speed.
 
 ## 8. Class Design
 
